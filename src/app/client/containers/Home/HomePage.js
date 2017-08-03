@@ -6,9 +6,9 @@ import * as Paths from '../../constants/paths';
 const HomePage = (props) => {
   return (
     <Layout title="Welcome to Nopa!">
-      <div className="main-content">
+      <div className="main-content home">
         <div className="logo">
-          <Link to={Paths.HOME} title="Home" className="">
+          <Link to={Paths.HOME} title="Home">
             <img className="Nopa" alt="Logo" src={require('../../../static/images/Logo_Nopa.svg')} />
           </Link>
         </div>

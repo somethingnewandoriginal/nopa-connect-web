@@ -7,6 +7,10 @@
   width: 400px;
   justify-content: center;
 
+  @media screen and (max-width: 480px) {
+    width: auto;
+  }
+
   > div {
     background-color: white;
     padding: 10px;
@@ -16,6 +20,10 @@
     align-items: center;
     margin: 5px;
     display: flex;
+
+    @media screen and (max-width: 480px) {
+      width: 140px;
+    }
 
     > img {
       filter: grayscale(100%);

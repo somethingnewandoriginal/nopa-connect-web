@@ -1,6 +1,8 @@
 import React from 'react';
 import { Layout, Button } from '../../components';
 import * as Paths from '../../constants/paths';
+import { connect } from 'react-redux';
+import { selectBank } from '../../redux/actions/bank-actions';
 
 const bankList = [{
   name: 'Barclays',
@@ -28,25 +30,54 @@ const bankList = [{
   }
 ];
 
-const ChooseBankPage = (props) => {
-  return (
-    <Layout>
+class ChooseBankPage extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render(){
+    return (
+      <Layout title='Choose bank'>
       <div className="main-content">
-        <h1>Which bank does this account belong to?</h1>
-        <p>Track all of your payments by connecting as many bank accounts as you'd like to your Nopa<br />
-          account and get updates on your balance instantly.</p>
+      <h1>Which bank does this account belong to?</h1>
+      <p className="zopa-hide-on-small">Track all of your payments by connecting as many bank accounts as you'd like to your Nopa<br />
+      account and get updates on your balance instantly.</p>
+      <p className="zopa-hide-on-med-and-up">Choose your bank</p>
 
-        <div className="bank-list">
-            {
-              bankList.map(bank => <div ><img alt={bank.name} src={bank.logo} /></div>)
-            }
-        </div>
+      <div className="bank-list">
+      {
+        bankList.map(bank => {
+          return(
+            <div key={bank.name} onClick={()=>{this.props.selectBank(bank.name);}}>
+            <img
+            className={bank.name === this.props.bank ? 'selected' : null}
+            alt={bank.name} src={bank.logo}/>
+            </div>
+          );
+        })
+      }
+      </div>
 
-        <Button to={Paths.LOGIN_BANK} className="button">Get started</Button>
+      <Button to={Paths.LOGIN_BANK} className="button">Continue</Button>
 
       </div>
-    </Layout>
-  );
+      </Layout>
+    )
+  }
 }
 
-export default ChooseBankPage;
+const mapStateToProps = (state) => {
+  return {
+    bank : state.bankReducer.bank
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    selectBank : (bank) => {
+      dispatch(selectBank(bank))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChooseBankPage);

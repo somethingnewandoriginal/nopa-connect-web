@@ -1,4 +1,18 @@
 .layout .logo {
   text-align: center;
   margin-bottom: 20px;
+
+  @media screen and (max-width: 480px) {
+      display: none;
+  }
+}
+
+.home{
+  padding: 70px 15px;
+}
+
+br{
+  @media screen and (max-width: 480px) {
+      display: none;
+  }
 }

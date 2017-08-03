@@ -21,10 +21,10 @@ const LoginForm = (props) => {
         errors={props.errors.accountNumber} />
       <TextInput
         name="passCode"
-        label="Passode"
+        label="Passcode"
         handleChange={props.handleChange}
         errors={props.errors.passCode}
-        password />
+        type="password" />
       <TextInput
         name="memorableWord"
         label="Memorable word"

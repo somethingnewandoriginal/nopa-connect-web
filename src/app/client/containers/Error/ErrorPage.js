@@ -31,7 +31,7 @@ class ErrorPage extends React.Component {
 
   render () {
     return (
-      <Layout>
+      <Layout title='Error'>
         {this.printError(this.props.route.error)}
       </Layout>
     );
@@ -43,4 +43,3 @@ ErrorPage.propTypes = {
 };
 
 export default ErrorPage;
-

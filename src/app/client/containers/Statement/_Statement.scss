@@ -1,0 +1,70 @@
+.account-details{
+  display : flex;
+  justify-content : space-between;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  margin-bottom: 20px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (max-width : 480px){
+    border: 0;
+    padding: 0;
+  }
+
+  .first-col, .second-col{
+    display: flex;
+    flex-direction: column;
+  }
+  .first-col{
+    align-items: flex-start;
+  }
+  .second-col{
+    align-items: flex-end;
+  }
+}
+
+p{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.transactions{
+  list-style: none;
+  padding: 0;
+  background-color: white;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  li{
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Source Sans Pro', sans-serif;
+    border-bottom: 1px solid #eee;
+    font-weight: 100;
+  }
+
+  .date-item{
+    background-color: #eee;
+    text-align: left;
+    height: 20px;
+  }
+
+  .transaction{
+    font-size: 13px;
+    min-height: 30px;
+    font-weight: 400;
+    align-items: center;
+  }
+}
+
+.button{
+  max-width: inherit;
+}

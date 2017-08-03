@@ -19,7 +19,7 @@ const partners = [{
 ];
 
 const partnerLogos = partners.map((partner) =>
-    <div><img className="Nopa" alt={partner.name} src={partner.logo} /></div>
+    <div key={partner.name}><img className="Nopa" alt={partner.name} src={partner.logo} /></div>
 );
 
 const Partners = (props) => {

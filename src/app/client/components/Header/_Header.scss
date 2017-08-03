@@ -2,8 +2,22 @@
   display: flex;
   justify-content: space-between;
   margin: 10px;
-  .logo {
 
+  @media screen and (max-width: 480px) {
+      background-color: white;
+      margin : 0;
+      align-items: center;
+      padding: 0 10px;
+  }
+  .logo {
+    visibility: hidden;
+    @media screen and (max-width: 480px) {
+        visibility: visible;
+    }
+
+    img{
+      width: 100px;
+    }
   }
   .signin {
 
